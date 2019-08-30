@@ -24,7 +24,7 @@ const getMatrix = (col, row, bombs) => {
     for(let c=0; c<col; c++) {
         matrix[c] = [];
         for(let r=0; r<row; r++) {
-            if(isBomb(bombs, c, r)) matrix[c][r] = { value: '*', isOpen: false, isFlaged: false };
+            if(isBomb(bombs, c, r)) matrix[c][r] = { value: '💣', isOpen: false, isFlaged: false };
             else {
                 const numberOfBombsAround = getBombsAround(bombs, c, r, col, row).length;
                 matrix[c][r] = {
@@ -78,7 +78,7 @@ class MinesweeperContainer extends React.Component {
 
         const { numberOfCols, numberOfRows } = this.props;
         if(row.isOpen && row.value === '') this.openAdjacents(grid, c, r, numberOfCols, numberOfRows);
-        if(row.isOpen && row.value === '*') {
+        if(row.isOpen && row.value === '💣') {
             alert('Game over!');
             grid.map((line) => {
                 return line.map((square) => {

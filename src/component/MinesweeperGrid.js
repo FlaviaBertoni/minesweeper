@@ -6,23 +6,23 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
     root: {
-      fontSize: 10,
+      fontSize: 20,
     },
     paper: {
-        height: 12,
-        width: 12,
+        height: 30,
+        width: 30,
         backgroundColor: '#ffffffb0',
     },
     button: {
-        height: 12,
-        width: 12,
+        height: 30,
+        width: 30,
         borderRadius: 0,
         backgroundColor: '#fff',
         cursor: 'pointer',
     },
 }));
 
-const returnOpenedSquare = ({ value, ...props }) => <Paper square {...props}>{value} .</Paper>;
+const returnOpenedSquare = ({ value, ...props }) => <Paper square {...props}>{value}</Paper>;
 const returnClosedSquare = ({ row, lineIndex, rowIndex, onClick, ...props }) => (
     <Paper
         onClick={() => onClick(lineIndex, rowIndex, { ...row, isOpen: true })}
@@ -33,7 +33,7 @@ const returnClosedSquare = ({ row, lineIndex, rowIndex, onClick, ...props }) => 
         variant="contained"
         {...props}
     >
-        { row.isFlaged ? '^' : '' }
+        { row.isFlaged ? '⚑' : '' }
     </Paper>
 );
 

@@ -12,7 +12,7 @@ function App() {
                 </p>
             </header>
             <div>
-                <MinesweeperContainer numberOfCols={40} numberOfRows={40} numberOfBombs={50}/>
+                <MinesweeperContainer numberOfCols={15} numberOfRows={15} numberOfBombs={40}/>
             </div>
         </div>
     </div>
